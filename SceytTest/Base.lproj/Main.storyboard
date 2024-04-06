@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MessagesViewController" customModule="SceytTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zmW-ZQ-YXj">
+                                <rect key="frame" x="0.0" y="40" width="375" height="575"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rY2-eQ-NsD">
+                                    <size key="itemSize" width="310" height="270"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="5"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="MessageCell" id="2vp-p1-yzs" customClass="MessageCell" customModule="SceytTest" customModuleProvider="target">
+                                        <rect key="frame" x="32.5" y="0.0" width="310" height="270"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="270"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" id="Jis-S6-NmP">
+                                    <rect key="frame" x="0.0" y="270" width="375" height="5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="bx0-Uv-dzf"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Gky-uo-4EW"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RO2-IU-zsP" customClass="InputTextView" customModule="SceytTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="615" width="375" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="aiR-wp-w2u"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RO2-IU-zsP" secondAttribute="bottom" id="2JT-d4-GBT"/>
+                            <constraint firstItem="zmW-ZQ-YXj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EDF-p3-VmP"/>
+                            <constraint firstItem="RO2-IU-zsP" firstAttribute="top" secondItem="zmW-ZQ-YXj" secondAttribute="bottom" id="WKV-Ci-DCC"/>
+                            <constraint firstItem="RO2-IU-zsP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xsf-3n-MNm"/>
+                            <constraint firstItem="zmW-ZQ-YXj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="jLT-cP-BO1"/>
+                            <constraint firstItem="RO2-IU-zsP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tBb-wh-TeJ"/>
+                            <constraint firstItem="zmW-ZQ-YXj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vRK-ev-BFj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="zmW-ZQ-YXj" id="fgS-sa-fl1"/>
+                        <outlet property="inputTextView" destination="RO2-IU-zsP" id="qoh-pc-UcJ"/>
+                        <outlet property="inputTextViewBottomConstraint" destination="2JT-d4-GBT" id="5zb-dd-SHh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4" y="-2.2488755622188905"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
